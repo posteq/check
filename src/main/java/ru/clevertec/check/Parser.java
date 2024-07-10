@@ -45,4 +45,30 @@ public class Parser {
         }
         return new Order(items,discountCard,balance);
     }
+
+    public void parseToSavePath(String[] input) throws WriteFileOutputException {
+        boolean pathSaveIsPresent = false;
+        for (String i : input) {
+            if (Pattern.matches(regPathToSave, i)) {
+                String[] oo = i.split("=");
+                PATH_TO_SAVE = (oo[1]);
+                pathSaveIsPresent = true;
+            }
+        }
+            if (!pathSaveIsPresent)
+                throw new WriteFileOutputException("BAD REQUEST");
+    }
+
+
+    public void parseToProduct(String[] input) throws WriteFileOutputException {
+        for(String i : input) {
+            if (Pattern.matches(regPathToProduct, i)) {
+                String[] oo = i.split("=");
+                PATH_TO_PRODUCT = (oo[1]);
+            }
+        }
+        if(PATH_TO_PRODUCT == null) {
+            throw new WriteFileOutputException("BAD REQUEST");
+        }
+    }
 }

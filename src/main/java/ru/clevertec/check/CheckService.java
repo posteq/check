@@ -30,6 +30,7 @@ public class CheckService {
         this.itemList = WorkItemInit.getInstance(discountList , productList);
         this.outputOrderList = new WorkOutputOrderInit(discountList, productList , itemList , inputData.order);
         this.balance = inputData.order.getBalance();
+
     }
     public String getCheck() throws WriteFileOutputException {
         return WriterInit.outputListToString(outputOrderListToString());

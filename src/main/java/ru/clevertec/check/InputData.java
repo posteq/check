@@ -10,6 +10,8 @@ public final class InputData {
 
     public void getInstance(String[] args) throws WriteFileOutputException {
         Parser onesParser = new Parser();
+        onesParser.parseToSavePath(args);
+        onesParser.parseToProduct(args);
         this.order = onesParser.parseToOrder(args);
     }
 }
