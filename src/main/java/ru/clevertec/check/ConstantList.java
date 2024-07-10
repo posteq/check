@@ -12,6 +12,6 @@ public abstract class ConstantList {
      */
     public static final String regIdCount = "\\d{1,2}\\-\\d{1,2}";
     public static final String regDiscountCard = "discountCard=\\d{4}";
-    public static final String regBalanceCard = "balanceDebitCard=\\d{1,4}";
+    public static final String regBalanceCard = "balanceDebitCard=\\d{1,}";
 
 }
